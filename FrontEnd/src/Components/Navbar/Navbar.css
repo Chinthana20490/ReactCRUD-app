@@ -1,0 +1,48 @@
+*{
+margin: 0;
+padding: 0;
+}
+
+.wrapper{
+    /* position: fixed; */
+    width: 100%;
+    height: 70px;
+    background-color: rgb(17, 16, 16);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+}
+.logo{
+    padding: auto;
+}
+.content{    
+    display: flex;
+    gap: 20px;
+}
+.content a{
+    color: azure;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: 0.2s all linear;
+}
+.content a:hover{
+    background-color: rgb(100, 95, 95);
+    border-radius: 5px;
+}
+.inputfield{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-right: 15px;
+}
+.inputfield input{
+    border-radius: 10px;
+}
+.bx{
+    color: azure;
+    cursor: pointer;
+    font-size: 25px;
+    
+}
