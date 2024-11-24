@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios'
 
 function Users(props) {
 
@@ -8,6 +9,16 @@ function Users(props) {
     } 
 
     const {_id, name, gmail, age, address} = props.user;
+
+    //delete users part
+    const history = useNavigate();
+    const deletehandler = async () => {
+      await axios.delete(`http://localhost:5000/users/${_id}`)
+      .then(res => res.data)
+      .then(() => history('/'))
+      .then(() => history('/userdetails')) //after user deleted, page should navigate to userdelatils page
+    };
+
 
   return (
     <div>
@@ -18,7 +29,7 @@ function Users(props) {
        <h2>Age:{age}</h2>
        <h2>Address:{address}</h2>
        <button type="button"><Link to = {`/userdetails/${_id}`}>Update</Link></button>
-       <button>Delete</button>
+       <button onClick={deletehandler}>Delete</button>
        <br /><br />
     </div>
   )
