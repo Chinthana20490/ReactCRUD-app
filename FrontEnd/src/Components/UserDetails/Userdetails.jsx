@@ -27,8 +27,10 @@ function Userdetails() {
         {users && users.map((user, i) => (
           <div key={i}>
             <Users user={user}/>
-          </div>
+            
+          </div>          
         ))}
+        
       </div>
       
     </div>
